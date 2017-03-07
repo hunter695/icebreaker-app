@@ -20,7 +20,7 @@
     url: 'mongodb://localhost:27017/icebreaker',
     },
     }
-	```
+	  ```
 4. Replace '...' with the corresponding keys.
 
 ## Install Dependencies
