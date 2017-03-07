@@ -2,12 +2,15 @@
 
 ## Configuration Files
 1. From root directory of this project:
-    ```sh
+
+	```sh
     $ mkdir config && touch config/config.js
     ```
+    
 2. Get your Twitter API keys: https://apps.twitter.com/
 3. Inside "config/config.js" you should have:
-    ```javascript
+
+   ```javascript
     module.exports = {
     twitter: {
     consumer_key: '...',
@@ -21,6 +24,7 @@
     },
     }
 	```
+    
 4. Replace '...' with the corresponding keys.
 
 ## Install Dependencies
