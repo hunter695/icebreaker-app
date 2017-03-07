@@ -22,6 +22,7 @@ module.exports = {
 }
 ```
 4. Replace '...' with the corresponding keys.
+
 ## Install Dependencies
 
 `yarn`
@@ -31,4 +32,5 @@ module.exports = {
 `yarn start`
 
 `http://localhost:8080`
+
 
