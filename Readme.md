@@ -1,6 +1,6 @@
 # IceBreaker App
 
-## Configuration files
+## Configuration Files
 1. From root directory of this project:
 ```sh
 $ mkdir config && touch config/config.js
@@ -21,6 +21,7 @@ module.exports = {
   },
 }
 ```
+4. Replace '...' with the corresponding keys.
 ## Install Dependencies
 
 `yarn`

@@ -23,7 +23,7 @@ module.exports = {
     T.get('search/tweets', params, callback)
   },
   /**
-   * Stores tweets into MongoDB database 'wildcard'
+   * Returns a promise that resolves the most favorited tweet
    * @param {Object[]} tweets Array of tweets in JSON
    */
   mostFavoritedTweet(tweets) {
@@ -45,8 +45,9 @@ module.exports = {
   /**
    * Stores tweets into MongoDB database 'wildcard'
    * @param {Object[]} tweets Array of tweets in JSON
+   * @param {string} collectionToInsert MongoDB collection to store in.
    */
-  store(tweets) {
+  store(tweets, collectionToInsert = 'wildcard') {
     const mongodbURL = config.mongodb.url
     const MongoClient = mongodb.MongoClient
     if (tweets.length > 0) {
@@ -55,7 +56,7 @@ module.exports = {
           console.log('Unable to connect, error: ', mongodbError)
           // res.send(err); // from express
         } else {
-          const collection = db.collection('wildcard')
+          const collection = db.collection(collectionToInsert)
           console.log('DB connected successfully')
           collection.insert(tweets, (insertError) => {
             // console.log(`DB insert result: ${records.ops[0]._id}`)
