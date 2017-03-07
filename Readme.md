@@ -1,13 +1,14 @@
 # IceBreaker App
 
 ## Configuration Files
-From root directory of this project:
+
+- From root directory of this project:
 
 ```sh
 $ mkdir config && touch config/config.js
 ```
     
-Get your Twitter API keys: https://apps.twitter.com/
+- Get your Twitter API keys: https://apps.twitter.com/
 Inside "config/config.js" you should have:
 
 ```javascript
@@ -25,7 +26,7 @@ url: 'mongodb://localhost:27017/icebreaker',
 }
 ```
 
-Replace '...' with the corresponding keys.
+- Replace '...' with the corresponding keys.
 
 ## Install Dependencies
 
