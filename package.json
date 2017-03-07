@@ -53,10 +53,13 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "express": "^4.15.2",
+    "mongodb": "^2.2.24",
     "normalize.css": "^5.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "next",
-    "styled-components": "^1.4.4"
+    "styled-components": "^1.4.4",
+    "twit": "^2.2.5"
   }
 }
