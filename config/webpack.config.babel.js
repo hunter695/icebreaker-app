@@ -3,8 +3,8 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const PATHS = {
-  app: path.join(__dirname, 'src'),
-  build: path.join(__dirname, 'build'),
+  app: path.join(__dirname, '../src'),
+  build: path.join(__dirname, '../build'),
 }
 
 const commonConfig = {

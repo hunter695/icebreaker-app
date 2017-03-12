@@ -7,7 +7,7 @@
   "author": "Igor Goldvekht",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch webpack.config.babel.js --exec 'webpack-dev-server --env development'",
+    "start": "nodemon --watch ./config/webpack.config.babel.js --exec 'webpack-dev-server --config ./config/webpack.config.babel.js --env development'",
     "build": "webpack --env production",
     "lint:js": "eslint --ignore-path .gitignore --",
     "lint:css": "stylelint",
