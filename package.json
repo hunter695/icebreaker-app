@@ -23,6 +23,7 @@
       "test"
     ]
   },
+  "moduleRoots": [ "src" ],
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
