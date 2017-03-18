@@ -19,8 +19,7 @@
   "lint-staged": {
     "*.js": [
       "lint:js",
-      "lint:css",
-      "test"
+      "lint:css"
     ]
   },
   "moduleRoots": [
