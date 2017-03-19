@@ -1,9 +1,9 @@
 {
-  "name": "react-boilerplate",
+  "name": "icebreaker",
   "version": "1.0.0",
-  "description": "Boilerplate code for a react web app",
+  "description": "An app to generate pickup lines and icebreakers.",
   "main": "index.js",
-  "repository": "https://github.com/IgorGee/react-boilerplate.git",
+  "repository": "https://github.com/hunter695/icebreaker-app.git",
   "author": "Igor Goldvekht",
   "license": "MIT",
   "scripts": {
