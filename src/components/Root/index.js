@@ -8,6 +8,7 @@ const MaxHeight = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: linear-gradient(-180deg, #3cf 26%, #72e6e2 91%);
 `
 
 const Content = styled.main`
