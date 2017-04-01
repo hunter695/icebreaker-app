@@ -1,21 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const StyledHeader = styled.header`
   color: white;
 `
 
 const Navigation = styled.nav`
-  ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    margin: 40px;
-    li {
-      margin: 0 8px;
-    }
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 8px;
   }
 `
+
+const activeStyle = {
+  borderBottom: '2px solid white',
+}
 
 const AppTitle = styled.h1`
   text-align: center;
@@ -26,11 +31,9 @@ const AppTitle = styled.h1`
 const Header = () => (
   <StyledHeader>
     <Navigation>
-      <ul>
-        <li>Home</li>
-        <li>Contribute</li>
-        <li>About</li>
-      </ul>
+      <NavLink exact activeStyle={activeStyle} to="/">Home</NavLink>
+      <NavLink activeStyle={activeStyle} to="/Contribute">Contribute</NavLink>
+      <NavLink activeStyle={activeStyle} to="/About">About</NavLink>
     </Navigation>
     <AppTitle>icebreaker</AppTitle>
   </StyledHeader>
