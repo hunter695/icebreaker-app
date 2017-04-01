@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 import 'normalize.css'
 import Header from './components/Header'
-import Footer from './components/Footer'
 
 const MaxHeight = styled.div`
   display: flex;
@@ -19,7 +18,6 @@ const Root = (props) => (
   <MaxHeight>
     <Header />
     <Content>{props.children}</Content>
-    <Footer />
   </MaxHeight>
 )
 
