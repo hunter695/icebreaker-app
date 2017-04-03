@@ -22,8 +22,4 @@ const Contribute = () => (
   </Main>
 )
 
-Contribute.propTypes = {
-
-}
-
 export default Contribute
