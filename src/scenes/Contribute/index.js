@@ -1,25 +1,53 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import AndroidInput from 'components/AndroidInput'
-import Button from 'components/Button'
+import Switcher from './components/Switcher'
+import Submission from './components/Submission'
 
 const Main = styled.main`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  :first-child {
+    margin-bottom: 32px;
+  }
 `
 
-const Submission = styled.div`
-  display: flex;
-  flex-basis: 75%;
-`
+export default class Contribute extends Component {
+  state = {
+    type: 'icebreaker',
+    text: '',
+  }
 
-const Contribute = () => (
-  <Main>
-    <Submission>
-      <AndroidInput placeholder="Type in your icebreaker"></AndroidInput>
-      <Button style={{ marginLeft: '16px' }}>Submit</Button>
-    </Submission>
-  </Main>
-)
+  switchType = () => {
+    const type = this.state.type === 'icebreaker' ? 'pickup' : 'icebreaker'
+    this.setState({
+      type,
+    })
+  }
 
-export default Contribute
+  updateText = (event) => {
+    const text = event.target.value
+    this.setState({
+      text,
+    })
+  }
+
+  render() {
+    return (
+      <Main>
+        <Switcher
+          name="contribution"
+          choices={['icebreaker', 'pickup']}
+          checked={this.state.type === 'pickup'}
+          onChange={this.switchType}
+        />
+        <Submission
+          type={this.state.type}
+          text={this.state.text}
+          onClick={() => console.log('click')}
+          onChange={this.updateText}
+        />
+      </Main>
+    )
+  }
+}
