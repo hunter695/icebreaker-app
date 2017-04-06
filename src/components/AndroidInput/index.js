@@ -1,6 +1,7 @@
+import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 
-const input = styled.input`
+const Input = styled.input`
   border-top: none;
   border-left: none;
   border-right: none;
@@ -18,4 +19,13 @@ const input = styled.input`
     border-bottom: 2px solid #09c;
   }
 `
-export default input
+
+const AndroidInput = (props) => (
+  <Input onChange={props.onChange} />
+)
+
+AndroidInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+}
+
+export default AndroidInput
