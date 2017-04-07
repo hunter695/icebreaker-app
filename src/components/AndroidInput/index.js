@@ -21,11 +21,16 @@ const Input = styled.input`
 `
 
 const AndroidInput = (props) => (
-  <Input onChange={props.onChange} />
+  <Input placeholder={props.placeholder} onChange={props.onChange} />
 )
 
 AndroidInput.propTypes = {
   onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+}
+
+AndroidInput.defaultProps = {
+  placeholder: '',
 }
 
 export default AndroidInput
