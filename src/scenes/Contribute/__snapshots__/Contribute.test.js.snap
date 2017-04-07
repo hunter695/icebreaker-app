@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contribute /> renders UI 1`] = `
+<main
+  className="kekJLV"
+>
+  <div
+    className="hwytNh"
+  >
+    <span
+      className="iFFOKQ"
+    >
+      icebreaker
+    </span>
+    <div
+      className="eCjdJE"
+    >
+      <input
+        id="contribution"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="contribution"
+      />
+    </div>
+    <span
+      className="fUluhI"
+    >
+      pickup
+    </span>
+  </div>
+  <div
+    className="qYhrK"
+  >
+    <input
+      className="gZvYYU"
+      onChange={[Function]}
+      placeholder="Enter your icebreaker"
+    />
+    <button
+      className="bNfATh"
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+  </div>
+</main>
+`;
