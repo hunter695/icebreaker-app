@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Switcher from './components/Switcher'
+import Switcher from 'components/Switcher'
 import Submission from './components/Submission'
 
 const Main = styled.main`
