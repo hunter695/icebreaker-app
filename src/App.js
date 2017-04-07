@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Root from 'components/Root'
 import Home from 'scenes/Home'
 import Contribute from 'scenes/Contribute'
+import About from 'scenes/About'
 
 const App = () => (
   <Router>
@@ -10,7 +11,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/contribute" component={Contribute} />
-        <Route exact path="/about" render={() => <h1>About</h1>} />
+        <Route exact path="/about" component={About} />
         <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </Root>
