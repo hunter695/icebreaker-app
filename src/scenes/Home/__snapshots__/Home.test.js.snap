@@ -1,11 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Home /> renders initial UI 1`] = `
-<div>
-  <h1
-    className="eBQaql"
+<main
+  className="czfxPD"
+>
+  <div
+    className="jlRHmo"
   >
-    Home
-  </h1>
-</div>
+    <div
+      className="hwytNh"
+    >
+      <span
+        className="iFFOKQ"
+      >
+        icebreaker
+      </span>
+      <div
+        className="eCjdJE"
+      >
+        <input
+          id="homeTypePicker"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          htmlFor="homeTypePicker"
+        />
+      </div>
+      <span
+        className="fUluhI"
+      >
+        pickup
+      </span>
+    </div>
+    <div
+      className="hwytNh"
+    >
+      <span
+        className="iFFOKQ"
+      >
+        safe
+      </span>
+      <div
+        className="eCjdJE"
+      >
+        <input
+          id="homeSafetyPicker"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          htmlFor="homeSafetyPicker"
+        />
+      </div>
+      <span
+        className="fUluhI"
+      >
+        wildcard
+      </span>
+    </div>
+  </div>
+  <button
+    className="bNfATh"
+    onClick={[Function]}
+  >
+    Break the Ice!
+  </button>
+</main>
 `;
