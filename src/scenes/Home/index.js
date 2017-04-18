@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import Switcher from 'components/Switcher'
 import styled from 'styled-components'
 import Button from 'components/Button'
@@ -23,7 +24,18 @@ export default class Home extends Component {
   state = {
     type: 'icebreaker',
     wild: false,
+    data: null,
   }
+
+  getIcebreaker = (wild) => (
+    axios.get(`http://localhost:3000/icebreaker?wild=${wild}`)
+      .then((response) => response.data)
+  )
+
+  getPickupline = (wild) => (
+    axios.get(`http://localhost:3000/pickup?wild=${wild}`)
+      .then((response) => response.data)
+  )
 
   switchType = () => {
     const type = this.state.type === 'icebreaker' ? 'pickup' : 'icebreaker'
@@ -39,7 +51,20 @@ export default class Home extends Component {
     })
   }
 
+  renderData = () => {
+    const wild = this.state.wild
+    const result = this.state.type === 'icebreaker' ?
+      this.getIcebreaker(wild) :
+      this.getPickupline(wild)
+    result.then((data) => {
+      this.setState({
+        data,
+      })
+    })
+  }
+
   render() {
+    const data = this.state.data
     return (
       <Main>
         <Controls>
@@ -57,10 +82,11 @@ export default class Home extends Component {
           />
         </Controls>
         <Button
-          onClick={() => { console.log('Click') }}
+          onClick={this.renderData}
         >
           Break the Ice!
         </Button>
+        {data !== null && data.text}
       </Main>
     )
   }
