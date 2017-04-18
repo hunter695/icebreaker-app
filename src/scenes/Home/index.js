@@ -22,7 +22,7 @@ const Controls = styled.div`
 export default class Home extends Component {
   state = {
     type: 'icebreaker',
-    safety: 'safe',
+    wild: false,
   }
 
   switchType = () => {
@@ -33,9 +33,9 @@ export default class Home extends Component {
   }
 
   switchSafety = () => {
-    const safety = this.state.safety === 'safe' ? 'wildcard' : 'safe'
+    const wild = !this.state.wild
     this.setState({
-      safety,
+      wild,
     })
   }
 
@@ -52,7 +52,7 @@ export default class Home extends Component {
           <Switcher
             name="homeSafetyPicker"
             choices={['safe', 'wildcard']}
-            checked={this.state.safety === 'wildcard'}
+            checked={this.state.wild}
             onChange={this.switchSafety}
           />
         </Controls>
