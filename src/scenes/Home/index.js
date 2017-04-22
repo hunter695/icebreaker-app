@@ -27,13 +27,8 @@ export default class Home extends Component {
     data: null,
   }
 
-  getIcebreaker = (wild) => (
-    axios.get(`/icebreaker?wild=${wild}`)
-      .then((response) => response.data)
-  )
-
-  getPickupline = (wild) => (
-    axios.get(`/pickup?wild=${wild}`)
+  getLine = (wild) => (
+    axios.get(`/${this.state.type}?wild=${wild}`)
       .then((response) => response.data)
   )
 
@@ -53,9 +48,7 @@ export default class Home extends Component {
 
   renderData = () => {
     const wild = this.state.wild
-    const result = this.state.type === 'icebreaker' ?
-      this.getIcebreaker(wild) :
-      this.getPickupline(wild)
+    const result = this.getLine(wild)
     result.then((data) => {
       this.setState({
         data,
