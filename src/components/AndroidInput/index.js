@@ -21,12 +21,17 @@ const Input = styled.input`
 `
 
 const AndroidInput = (props) => (
-  <Input placeholder={props.placeholder} onChange={props.onChange} />
+  <Input
+    value={props.text}
+    placeholder={props.placeholder}
+    onChange={props.onChange}
+  />
 )
 
 AndroidInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
+  text: PropTypes.string.isRequired,
 }
 
 AndroidInput.defaultProps = {

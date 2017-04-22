@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 const Submission = (props) => (
   <Wrapper>
     <AndroidInput
+      text={props.text}
       placeholder={`Enter your ${props.type}`}
       onChange={props.onChange}
     />
@@ -25,6 +26,7 @@ Submission.propTypes = {
   onChange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf(['icebreaker', 'pickup']).isRequired,
+  text: PropTypes.string.isRequired,
 }
 
 export default Submission
