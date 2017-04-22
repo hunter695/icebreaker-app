@@ -3,6 +3,7 @@ import axios from 'axios'
 import Switcher from 'components/Switcher'
 import styled from 'styled-components'
 import Button from 'components/Button'
+import LineDisplayCard from './components/LineDisplayCard'
 
 const Main = styled.main`
   display: flex;
@@ -57,7 +58,6 @@ export default class Home extends Component {
   }
 
   render() {
-    const data = this.state.data
     return (
       <Main>
         <Controls>
@@ -79,7 +79,7 @@ export default class Home extends Component {
         >
           Break the Ice!
         </Button>
-        {data !== null && data.text}
+        <LineDisplayCard data={this.state.data} />
       </Main>
     )
   }
