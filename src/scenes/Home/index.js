@@ -28,12 +28,12 @@ export default class Home extends Component {
   }
 
   getIcebreaker = (wild) => (
-    axios.get(`http://localhost:3000/icebreaker?wild=${wild}`)
+    axios.get(`/icebreaker?wild=${wild}`)
       .then((response) => response.data)
   )
 
   getPickupline = (wild) => (
-    axios.get(`http://localhost:3000/pickup?wild=${wild}`)
+    axios.get(`/pickup?wild=${wild}`)
       .then((response) => response.data)
   )
 
