@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
 import Switcher from 'components/Switcher'
 import Submission from './components/Submission'
 
@@ -32,6 +33,19 @@ export default class Contribute extends Component {
     })
   }
 
+  clearText = () => {
+    this.setState({
+      text: '',
+    })
+  }
+
+  submitContribution = () => {
+    const text = this.state.text
+    axios.post(`/${this.state.type}`,
+      { text, author: 'Anonymous' })
+    this.clearText()
+  }
+
   render() {
     return (
       <Main>
@@ -44,7 +58,7 @@ export default class Contribute extends Component {
         <Submission
           type={this.state.type}
           text={this.state.text}
-          onClick={() => console.log('click')}
+          onClick={this.submitContribution}
           onChange={this.updateText}
         />
       </Main>
