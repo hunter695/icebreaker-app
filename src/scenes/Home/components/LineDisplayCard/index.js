@@ -18,8 +18,8 @@ const LineDisplayCard = (props) => {
     <Card>
       <p>{text}</p>
       <p>By: {author}</p>
-      <p>Likes: {likes}</p>
-      <p>Dislikes: {dislikes}</p>
+      <button onClick={props.onClickLike(1)}>Like: {likes}</button>
+      <button onClick={props.onClickLike(-1)}>Dislike: {dislikes}</button>
     </Card>
   )
 }
@@ -33,6 +33,7 @@ LineDisplayCard.propTypes = {
       dislikes: PropTypes.number.isRequired,
     }
   ).isRequired,
+  onClickLike: PropTypes.func.isRequired,
 }
 
 export default LineDisplayCard

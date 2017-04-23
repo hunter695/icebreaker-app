@@ -28,10 +28,30 @@ export default class Home extends Component {
     data: null,
   }
 
+  onClickLike = (val) => () => {
+    const { collection, _id } = this.state.data
+    axios.post('/like',
+      { collection, id: _id, amount: val })
+      .then(() => this.updateLikes(val))
+  }
+
   getLine = (wild) => (
     axios.get(`/${this.state.type}?wild=${wild}`)
       .then((response) => response.data)
   )
+
+  updateLikes = (val) => {
+    const data = this.state.data
+
+    if (val < 0) {
+      data.dislikes += 1
+    } else {
+      data.likes += 1
+    }
+    this.setState({
+      data,
+    })
+  }
 
   switchType = () => {
     const type = this.state.type === 'icebreaker' ? 'pickup' : 'icebreaker'
@@ -79,7 +99,7 @@ export default class Home extends Component {
         >
           Break the Ice!
         </Button>
-        <LineDisplayCard data={this.state.data} />
+        <LineDisplayCard data={this.state.data} onClickLike={this.onClickLike} />
       </Main>
     )
   }
