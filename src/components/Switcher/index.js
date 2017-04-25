@@ -11,11 +11,11 @@ const Wrapper = styled.div`
 `
 
 const Highlight = styled.span`
-  color: #fff;
+  color: #ffffff;
 `
 
 const Dim = styled.span`
-  color: rgba(44, 44, 44, 0.3);
+  color: #004d00;
 `
 
 const Switcher = ({ checked, choices, name, onChange }) => (

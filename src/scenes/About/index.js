@@ -21,14 +21,14 @@ const Card = styled.div`
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  flex: 0 0 300px;
+  flex: 0 0 250px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   margin-bottom: 30px;
 `
 
 const Portrait = styled.img`
-  flex: 0 0 300px;
-  max-height: 300px;
+  flex: 0 0 250px;
+  max-height: 250px;
   border-radius: 5px 5px 0 0;
 `
 
@@ -37,7 +37,7 @@ const Title = styled.div`
 `
 
 const Description = styled.div`
-  padding: 15px 15px 20px;
+  padding: 10px 10px 10px;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
 `
