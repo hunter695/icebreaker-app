@@ -37,7 +37,7 @@ const Title = styled.div`
 `
 
 const Description = styled.div`
-  padding: 10px 10px 10px;
+  padding: 10px;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
 `

@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `
 
 const Highlight = styled.span`
-  color: #ffffff;
+  color: #fff;
 `
 
 const Dim = styled.span`
