@@ -28,7 +28,7 @@ exports[`<Home /> renders initial UI 1`] = `
         />
       </div>
       <span
-        className="fUluhI"
+        className="jOnvWM"
       >
         pickup
       </span>
@@ -54,7 +54,7 @@ exports[`<Home /> renders initial UI 1`] = `
         />
       </div>
       <span
-        className="fUluhI"
+        className="jOnvWM"
       >
         wildcard
       </span>

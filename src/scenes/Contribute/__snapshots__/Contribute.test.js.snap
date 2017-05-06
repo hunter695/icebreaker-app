@@ -25,7 +25,7 @@ exports[`<Contribute /> renders UI 1`] = `
       />
     </div>
     <span
-      className="fUluhI"
+      className="jOnvWM"
     >
       pickup
     </span>
@@ -37,6 +37,7 @@ exports[`<Contribute /> renders UI 1`] = `
       className="gZvYYU"
       onChange={[Function]}
       placeholder="Enter your icebreaker"
+      value=""
     />
     <button
       className="bNfATh"

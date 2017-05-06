@@ -2,6 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
+const logo = require('./logo.png')
+
+const Logo = styled.img`
+  display: flex;
+  margin: auto;
+  padding-bottom: 30px;
+`
+
 const StyledHeader = styled.header`
   color: white;
 `
@@ -22,12 +30,6 @@ const activeStyle = {
   borderBottom: '2px solid white',
 }
 
-const AppTitle = styled.h1`
-  text-align: center;
-  font-size: 4em;
-  letter-spacing: 4px;
-`
-
 const Header = () => (
   <StyledHeader>
     <Navigation>
@@ -35,7 +37,7 @@ const Header = () => (
       <NavLink activeStyle={activeStyle} to="/Contribute">Contribute</NavLink>
       <NavLink activeStyle={activeStyle} to="/About">About</NavLink>
     </Navigation>
-    <AppTitle>icebreaker</AppTitle>
+    <Logo src={logo} />
   </StyledHeader>
 )
 
