@@ -63,7 +63,20 @@ const commonConfig = {
   },
 }
 
-const productionConfig = () => commonConfig
+const productionConfig = () => {
+  const config = {
+    entry: PATHS.app,
+  }
+
+  return Object.assign(
+    {},
+    commonConfig,
+    config,
+    {
+      plugins: commonConfig.plugins.concat(config.plugins),
+    }
+  )
+}
 
 const developmentConfig = () => {
   const config = {
