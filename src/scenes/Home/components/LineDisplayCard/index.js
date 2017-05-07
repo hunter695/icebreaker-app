@@ -32,8 +32,12 @@ LineDisplayCard.propTypes = {
       likes: PropTypes.number.isRequired,
       dislikes: PropTypes.number.isRequired,
     }
-  ).isRequired,
+  ),
   onClickLike: PropTypes.func.isRequired,
+}
+
+LineDisplayCard.defaultProps = {
+  data: null,
 }
 
 export default LineDisplayCard
