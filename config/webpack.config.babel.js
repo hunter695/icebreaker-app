@@ -108,6 +108,12 @@ const developmentConfig = () => {
         errors: true,
         warnings: true,
       },
+
+      proxy: {
+        '/': {
+          target: 'http://localhost:3000',
+        },
+      },
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
