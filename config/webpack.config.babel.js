@@ -72,9 +72,6 @@ const productionConfig = () => {
     {},
     commonConfig,
     config,
-    {
-      plugins: commonConfig.plugins.concat(config.plugins),
-    }
   )
 }
 
