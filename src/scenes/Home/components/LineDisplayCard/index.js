@@ -15,7 +15,7 @@ const LineDisplayCard = (props) => {
   if (!props.data) return null
   const { text, author, likes, dislikes } = props.data
   return (
-    <Card>
+    <Card className="line-display-card">
       <p>{text}</p>
       <p>By: {author}</p>
       <button onClick={props.onClickLike(1)}>Like: {likes}</button>
