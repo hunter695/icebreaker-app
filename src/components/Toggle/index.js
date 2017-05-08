@@ -6,10 +6,10 @@ const ToggleButton = styled.div`
     display: none;
   }
   > input:checked + label {
-    background: #6fbeb5;
+    background: #ffce63;
     &::after {
       left: 20px;
-      background: #179588;
+      background: #51a080;
     }
   }
   > label {
@@ -17,7 +17,7 @@ const ToggleButton = styled.div`
     display: block;
     height: 20px;
     width: 44px;
-    background: #aac862;
+    background: #ffce63;
     border-radius: 100px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -29,7 +29,7 @@ const ToggleButton = styled.div`
       width: 26px;
       height: 26px;
       border-radius: 100px;
-      background: #649e7e;
+      background: #51a080;
       content: '';
       transition: all 0.3s ease;
     }
