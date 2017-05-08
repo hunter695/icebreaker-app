@@ -15,7 +15,8 @@ const Highlight = styled.span`
 `
 
 const Dim = styled.span`
-  color: #004d00;
+  color: black;
+  opacity: 0.2;
 `
 
 const Switcher = ({ checked, choices, name, onChange }) => (
