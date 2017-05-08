@@ -16,7 +16,7 @@ exports[`<Home /> renders initial UI 1`] = `
         icebreaker
       </span>
       <div
-        className="eCjdJE"
+        className="dZlebm"
       >
         <input
           id="homeTypePicker"
@@ -28,7 +28,7 @@ exports[`<Home /> renders initial UI 1`] = `
         />
       </div>
       <span
-        className="jOnvWM"
+        className="dZcTbW"
       >
         pickup
       </span>
@@ -42,7 +42,7 @@ exports[`<Home /> renders initial UI 1`] = `
         safe
       </span>
       <div
-        className="eCjdJE"
+        className="dZlebm"
       >
         <input
           id="homeSafetyPicker"
@@ -54,14 +54,14 @@ exports[`<Home /> renders initial UI 1`] = `
         />
       </div>
       <span
-        className="jOnvWM"
+        className="dZcTbW"
       >
         wildcard
       </span>
     </div>
   </div>
   <button
-    className="bNfATh"
+    className="dheVMG"
     onClick={[Function]}
   >
     Break the Ice!

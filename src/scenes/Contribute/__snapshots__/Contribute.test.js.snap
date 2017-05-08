@@ -13,7 +13,7 @@ exports[`<Contribute /> renders UI 1`] = `
       icebreaker
     </span>
     <div
-      className="eCjdJE"
+      className="dZlebm"
     >
       <input
         id="contribution"
@@ -25,7 +25,7 @@ exports[`<Contribute /> renders UI 1`] = `
       />
     </div>
     <span
-      className="jOnvWM"
+      className="dZcTbW"
     >
       pickup
     </span>
@@ -40,7 +40,7 @@ exports[`<Contribute /> renders UI 1`] = `
       value=""
     />
     <button
-      className="bNfATh"
+      className="dheVMG"
       onClick={[Function]}
     >
       Submit
