@@ -99,7 +99,7 @@ export default class Home extends Component {
         >
           Break the Ice!
         </Button>
-        <LineDisplayCard data={this.state.data} onClickLike={this.onClickLike} />
+        <LineDisplayCard isWild={this.state.wild} data={this.state.data} onClickLike={this.onClickLike} />
       </Main>
     )
   }
