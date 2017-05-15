@@ -30,9 +30,18 @@ export default class Home extends Component {
 
   onClickLike = (val) => () => {
     const { collection, _id } = this.state.data
-    axios.post('/like',
-      { collection, id: _id, amount: val })
-      .then(() => this.updateLikes(val))
+    // voted is always resetted to false
+    localStorage.setItem("voted", "false")
+    const result = localStorage.voted
+    
+    if (result === "false") {
+      axios.post('/like',
+        { collection, id: _id, amount: val })
+        .then(() => this.updateLikes(val))
+        // store voted as true
+        localStorage.setItem("voted", "true")
+    }
+    // cannot vote if voted before
   }
 
   getLine = (wild) => (
