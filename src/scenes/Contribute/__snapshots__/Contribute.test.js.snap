@@ -40,7 +40,7 @@ exports[`<Contribute /> renders UI 1`] = `
       value=""
     />
     <button
-      className="dheVMG"
+      className="fwJJde"
       onClick={[Function]}
     >
       Submit
