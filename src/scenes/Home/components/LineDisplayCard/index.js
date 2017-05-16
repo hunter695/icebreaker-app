@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import React, { PropTypes } from 'react'
 
+const twitterLogo = require('./twitterlogo.png')
+
 const Card = styled.main`
   position: relative;
   overflow: hidden;
@@ -19,6 +21,7 @@ const CardHeader = styled.div`
 `
 const CardFooter = styled.div`
   position: absolute;
+  display: flex;
   bottom: 0;
   border-top-style: solid;
   border-width: 1px;
@@ -27,6 +30,7 @@ const CardFooter = styled.div`
   height: 50px;
 `
 const Text = styled.p`
+  font-size: 18px;
   margin: 15px;
 `
 const Author = styled.p`
@@ -34,15 +38,25 @@ const Author = styled.p`
   float: left;
   margin-left: 10px;
 `
+const Buttons = styled.div`
+  position: absolute;
+  right: 0;
+`
 const Button = styled.button`
-  float: right;
+  font-size: 18px;
   margin: 10px;
-  padding: 8px;
+  padding: 6px;
   color: white;
   background-color: #4caf50;
   border: none;
-  width: 100px;
+  width: 90px;
   border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  &:active {
+    background-color: #399b3d;
+    transform: translateY(2px);
+  }
 `
 const TwitterUser = styled.div`
   font-weight: bold;
@@ -55,22 +69,25 @@ const TwitterFooter = styled.div`
   bottom: 0;
   width: 100%;
 `
-/*
-TODO: Home test issue failing due to PNG image being in the directory. Fix this,
-and add TwitterLogo.
+
 const TwitterLogo = styled.img`
   float: left;
   margin: 10px;
 `
-*/
+
 const Retweets = styled.p`
   opacity: 0.5;
   position: absolute;
-  right: 10px;
+  right: 15px;
 `
 
 const TwitterError = styled.p`
   margin: 10px;
+`
+
+const LikeDislike = styled.p`
+  opacity: 0.5;
+  margin-left: 20px;
 `
 
 const LineDisplayCard = (props) => {
@@ -86,9 +103,9 @@ const LineDisplayCard = (props) => {
       </CardHeader>
       { props.isWild
         ? <CardFooter>
-          { Object.prototype.hasOwnProperty.call(props.data, 'source')
+          { Object.prototype.hasOwnProperty.call(props.data, 'retweet_count')
             ? <TwitterFooter>
-              <p>[TODO:Twitter logo here]</p>
+              <TwitterLogo src={twitterLogo} />
               <TwitterUser>{author}</TwitterUser>
               <Retweets> Retweets: {props.data.retweet_count} </Retweets>
             </TwitterFooter>
@@ -97,8 +114,18 @@ const LineDisplayCard = (props) => {
         </CardFooter>
         : <CardFooter>
           <Author>{author}</Author>
-          <Button onClick={props.onClickLike(1)}>Like: {likes}</Button>
-          <Button onClick={props.onClickLike(-1)}>Dislike: {dislikes}</Button>
+          <LikeDislike>
+            Like: {likes} &nbsp;
+            Dislike: {dislikes}
+          </LikeDislike>
+          { props.renderButton
+            ? <Buttons>
+              <Button onClick={props.onClickLike(1)}>Like</Button>
+              <Button onClick={props.onClickLike(-1)}>Dislike</Button>
+            </Buttons>
+            : null
+          }
+
         </CardFooter>
       }
     </Card>
@@ -115,6 +142,7 @@ LineDisplayCard.propTypes = {
       retweet_count: PropTypes.number.isRequired,
     }
   ),
+  renderButton: PropTypes.bool.isRequired,
   isWild: PropTypes.bool.isRequired,
   onClickLike: PropTypes.func.isRequired,
 }

@@ -25,21 +25,19 @@ export default class Home extends Component {
   state = {
     type: 'icebreaker',
     wild: false,
+    renderButton: true,
     data: null,
   }
-
   onClickLike = (val) => () => {
     const { collection, _id } = this.state.data
-    // check for value of key voted
-    if (localStorage['voted'] === null) {
-      axios.post('/like',
-        { collection, id: _id, amount: val })
-        .then(() => this.updateLikes(val))
-        // store voted as true
-        localStorage.setItem('voted', true)
-    } else {
-      alert("Already voted!")
-    }
+    axios.post('/like',
+      { collection, id: _id, amount: val })
+      .then(() => this.updateLikes(val))
+    const date = new Date()
+    localStorage.setItem('voteTime', (date.getTime() / 1000))
+    this.setState({
+      renderButton: false,
+    })
   }
 
   getLine = (wild) => (
@@ -69,17 +67,26 @@ export default class Home extends Component {
 
   switchSafety = () => {
     const wild = !this.state.wild
+    const data = this.data
     this.setState({
-      wild,
+      wild, data,
     })
   }
 
   renderData = () => {
+    const voteTime = parseFloat(localStorage.voteTime)
+    const date = new Date()
+    let renderButton = true
+    if (voteTime && ((date.getTime() / 1000) - voteTime) < 30) {
+      renderButton = false
+    } else {
+      renderButton = true
+    }
     const wild = this.state.wild
     const result = this.getLine(wild)
     result.then((data) => {
       this.setState({
-        data,
+        data, renderButton,
       })
     })
   }
@@ -106,7 +113,7 @@ export default class Home extends Component {
         >
           Break the Ice!
         </Button>
-        <LineDisplayCard isWild={this.state.wild} data={this.state.data} onClickLike={this.onClickLike} />
+        <LineDisplayCard renderButton={this.state.renderButton} isWild={this.state.wild} data={this.state.data} onClickLike={this.onClickLike} />
       </Main>
     )
   }
