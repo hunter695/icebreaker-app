@@ -79,8 +79,6 @@ export default class Home extends Component {
     let renderButton = true
     if (voteTime && ((date.getTime() / 1000) - voteTime) < 30) {
       renderButton = false
-    } else {
-      renderButton = true
     }
     const wild = this.state.wild
     const result = this.getLine(wild)
