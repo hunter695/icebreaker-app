@@ -81,10 +81,6 @@ const Retweets = styled.p`
   right: 15px;
 `
 
-const TwitterError = styled.p`
-  margin: 10px;
-`
-
 const LikeDislike = styled.p`
   opacity: 0.5;
   margin-left: 20px;
@@ -98,7 +94,7 @@ const LineDisplayCard = (props) => {
       <CardHeader>
         { text
           ? <Text>{text}</Text>
-          : <TwitterError> Unable to retrieve tweet, please try again. </TwitterError>
+          : <Text> Sorry, the user contributed database is empty. </Text>
         }
       </CardHeader>
       { props.isWild
